@@ -1,0 +1,23 @@
+.loader-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(255, 255, 255); /* Fondo blanco transparentoso */
+    z-index: 9999;
+  }
+
+  .loader-container img{
+    width: calc(5000px / 25);
+    height: calc(4500px / 25);
+  }
+  
+  .loader-icon {
+    margin-top: -50px;
+    margin-left: 20px;
+  }
+  

@@ -1,0 +1,1316 @@
+/* Importar la fuente Montserrat si no está ya importada en la aplicación */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+.project-viewer-3d {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+}
+
+.viewer-header {
+  display: none;
+}
+
+.viewer-layout {
+  height: 100%;
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Asegurarse de que los estilos de la barra de navegación original se apliquen correctamente */
+.project-viewer-3d .nav-bar {
+  position: relative;
+  height: 110px;
+  z-index: 1000;
+}
+
+.project-viewer-3d .header {
+  margin-bottom: 0;
+}
+
+.project-viewer-3d .header .logo img {
+  width: calc(4450px / 25);
+  height: calc(1844px / 25);
+}
+
+/* Estilos para el logo en el panel izquierdo */
+.elements-logo {
+  background-color: #222;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+
+.elements-logo img {
+  width: 130px;
+  height: auto;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.elements-logo img:hover {
+  opacity: 1;
+}
+
+/* Ajustar el panel de elementos para acomodar el logo */
+.elements-panel {
+  width: 240px;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.08);
+}
+
+.elements-header {
+  padding: 18px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #f8f8f8;
+  display: flex;
+  align-items: center;
+}
+
+.elements-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.elements-header .material-icons {
+  margin-right: 10px;
+  color: #555;
+  font-size: 20px;
+}
+
+.elements-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+}
+
+.element-item {
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.element-item:hover {
+  background-color: #f9f9f9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.element-item.selected {
+  background-color: rgba(34, 34, 34, 0.05);
+  border: 1px solid rgba(34, 34, 34, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.element-icon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  margin-right: 14px;
+  transition: all 0.3s ease;
+}
+
+.element-item:hover .element-icon {
+  background-color: #e6e6e6;
+}
+
+.element-item.selected .element-icon {
+  background-color: rgba(34, 34, 34, 0.1);
+}
+
+.element-icon .material-icons {
+  font-size: 24px;
+  color: #333;
+}
+
+.element-item .element-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.element-item .element-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 2px;
+}
+
+.element-item .element-type {
+  font-size: 12px;
+  color: #666;
+  text-transform: none;
+}
+
+/* Contenedor principal */
+.viewer-container {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background-color: #f5f5f5;
+}
+
+/* Controles inferiores */
+.bottom-controls {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.transform-controls {
+  display: flex;
+  background-color: rgba(34, 34, 34, 0.85);
+  padding: 12px 16px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.transform-controls button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 4px;
+}
+
+.transform-controls button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.transform-controls button.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.control-label {
+  font-size: 12px;
+  margin-top: 6px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: normal;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.separator {
+  width: 1px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 8px;
+}
+
+/* Estilos para el panel de detalles mejorado */
+.details-panel {
+  position: absolute;
+  top: 25px;
+  right: 85px;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.92);
+  color: #333;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: rgba(40, 40, 40, 0.05);
+  border-bottom: 1px solid rgba(40, 40, 40, 0.1);
+}
+
+.details-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  color: white;
+}
+
+.details-content {
+  padding: 15px 20px;
+}
+
+.object-type {
+  display: inline-block;
+  background-color: rgba(40, 40, 40, 0.05);
+  color: #555;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.detail-row {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-row span:first-child {
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #555;
+  font-size: 13px;
+}
+
+.detail-row span:last-child {
+  color: #2c3e50;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.object-price {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 15px 0 10px;
+  display: flex;
+  align-items: baseline;
+}
+
+.object-price .currency {
+  font-size: 14px;
+  color: #7f8c8d;
+  margin-left: 2px;
+}
+
+.detail-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(40, 40, 40, 0.1);
+}
+
+.detail-actions button {
+  display: flex;
+  align-items: center;
+  background-color: rgba(40, 40, 40, 0.05);
+  color: #555;
+  border: 1px solid rgba(40, 40, 40, 0.2);
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.detail-actions button:hover {
+  background-color: rgba(40, 40, 40, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.detail-actions button svg {
+  margin-right: 6px;
+  font-size: 18px;
+}
+
+/* Loader */
+.loader3d-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.loader3d {
+  width: 300px;
+  padding: 30px;
+  background-color: rgba(34, 34, 34, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loader3d-progress {
+  width: 100%;
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.loader3d-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #333333, #555555);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Añadir un efecto de brillo que se mueve a través de la barra */
+.loader3d-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.loader3d-text {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 5px;
+}
+
+/* Añadir un icono de carga animado */
+.loader3d::before {
+  content: '';
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top: 3px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Asegurarnos de que no haya texto "close" visible */
+.close-viewer, .close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.close-btn .material-icons {
+  font-size: 20px;
+}
+
+.material-icons {
+  font-size: 20px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .elements-logo {
+    padding: 10px;
+  }
+  
+  .elements-logo img {
+    width: 100px;
+  }
+  
+  .elements-panel {
+    width: 100%;
+    height: 120px;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .elements-list {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+  }
+  
+  .element-item {
+    min-width: 120px;
+    margin-right: 10px;
+    margin-bottom: 0;
+  }
+  
+  .details-panel {
+    width: calc(100% - 40px);
+    left: 20px;
+    right: 20px;
+  }
+}
+
+.viewer-instructions {
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  text-align: center;
+}
+
+.first-person-instructions {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  z-index: 100;
+  pointer-events: none;
+  text-align: center;
+}
+
+/* Estilo para el cursor cuando está en modo primera persona */
+.pointer-lock-cursor {
+  cursor: none !important;
+}
+
+/* Estilo para el contenedor en modo primera persona */
+.first-person-mode {
+  cursor: crosshair;
+}
+
+.debug-panel {
+  position: absolute;
+  top: 80px;
+  left: 20px;
+  width: 300px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #00ff00;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: monospace;
+  font-size: 12px;
+  z-index: 1000;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.debug-logs {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.debug-log {
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.debug-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+}
+
+/* Estilos para la barra de navegación */
+.viewer-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #222;
+  color: white;
+  height: 80px;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: baseline;
+}
+
+.logo-text {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-right: 5px;
+}
+
+.logo-subtitle {
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  opacity: 0.7;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 30px;
+}
+
+.navbar-link {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  padding: 5px 0;
+  position: relative;
+  transition: all 0.2s ease;
+  opacity: 0.6;
+}
+
+.navbar-link:hover {
+  opacity: 0.8;
+}
+
+.navbar-link.active {
+  font-weight: 500;
+  opacity: 1;
+}
+
+.navbar-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+}
+
+/* Estilos responsivos para la barra de navegación */
+@media (max-width: 966px) {
+  .viewer-navbar {
+    padding: 15px 20px;
+  }
+  
+  .navbar-links {
+    gap: 15px;
+  }
+  
+  .logo-text {
+    font-size: 24px;
+  }
+  
+  .logo-subtitle {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+  }
+}
+
+/* Estilos para el botón flotante de cierre */
+.floating-close-btn {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+  background-color: rgba(34, 34, 34, 0.85);
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1100;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.floating-close-btn:hover {
+  background-color: rgba(34, 34, 34, 0.95);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.floating-close-btn .material-icons {
+  font-size: 22px;
+  font-weight: 300;
+}
+
+/* Añadir un efecto de rotación suave al pasar el mouse */
+.floating-close-btn:hover .material-icons {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
+}
+
+/* Estilos responsivos para el botón flotante */
+@media (max-width: 768px) {
+  .floating-close-btn {
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+  }
+  
+  .floating-close-btn .material-icons {
+    font-size: 18px;
+  }
+}
+
+.project-viewer-3d-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.project-viewer-3d-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: rgba(34, 34, 34, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-viewer-3d-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.close-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.project-viewer-3d-canvas {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 10;
+}
+
+.loader {
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 5px solid white;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.project-viewer-3d-controls {
+  position: absolute;
+  top: 30px;
+  left: 300px;
+  z-index: 20;
+  background-color: rgba(34, 34, 34, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 15px 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  max-width: 90%;
+}
+
+.time-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.time-presets {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.time-presets button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.time-presets button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.time-slider {
+  width: 100%;
+  height: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: linear-gradient(to right, 
+    #0a1a3a, /* Noche */
+    #4a6a9e, /* Amanecer */
+    #ffffff, /* Mediodía */
+    #ff9e63, /* Atardecer */
+    #0a1a3a  /* Noche */
+  );
+  outline: none;
+  border-radius: 3px;
+}
+
+.time-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.time-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  border: none;
+}
+
+.time-display {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .project-viewer-3d-controls {
+    top: 20px;
+    left: 20px;
+    padding: 10px 15px;
+    width: 250px;
+  }
+  
+  .time-presets button {
+    font-size: 16px;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Estilos para el control de materiales del suelo */
+.floor-material-control {
+  background-color: rgba(30, 30, 30, 0.8);
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.floor-material-control .control-label {
+  color: white;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.material-options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.material-options button {
+  background: rgba(60, 60, 60, 0.5);
+  border: 2px solid transparent;
+  border-radius: 6px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.material-options button:hover {
+  background: rgba(80, 80, 80, 0.7);
+}
+
+.material-options button.active {
+  border-color: #4a90e2;
+  background: rgba(74, 144, 226, 0.2);
+}
+
+.material-preview {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.material-preview.marble {
+  background-color: #e0e0e0;
+  background-image: linear-gradient(45deg, #e0e0e0 25%, #f0f0f0 25%, #f0f0f0 50%, #e0e0e0 50%, #e0e0e0 75%, #f0f0f0 75%, #f0f0f0 100%);
+  background-size: 10px 10px;
+}
+
+.material-preview.concrete {
+  background-color: #b0b0b0;
+  background-image: linear-gradient(45deg, #b0b0b0 25%, #c0c0c0 25%, #c0c0c0 50%, #b0b0b0 50%, #b0b0b0 75%, #c0c0c0 75%, #c0c0c0 100%);
+  background-size: 8px 8px;
+}
+
+.material-preview.wood {
+  background-color: #a67c52;
+  background-image: linear-gradient(90deg, #a67c52 0%, #8c6239 100%);
+}
+
+.material-preview.tile {
+  background-color: #d8d8d8;
+  background-image: linear-gradient(45deg, #d8d8d8 25%, #f8f8f8 25%, #f8f8f8 50%, #d8d8d8 50%, #d8d8d8 75%, #f8f8f8 75%, #f8f8f8 100%);
+  background-size: 20px 20px;
+}
+
+.material-options button span {
+  color: white;
+  font-size: 12px;
+}
+
+/* Nuevo selector de materiales más sutil */
+.floor-material-selector {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  background-color: rgba(30, 30, 30, 0.6);
+  border-radius: 30px;
+  padding: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+
+.material-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  padding: 2px;
+  background: rgba(60, 60, 60, 0.5);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.material-button:hover {
+  background: rgba(80, 80, 80, 0.7);
+  transform: translateY(-2px);
+}
+
+.material-button.active {
+  border-color: #4a90e2;
+  box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+}
+
+.material-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+.material-icon.wood {
+  background-color: #a67c52;
+  background-image: linear-gradient(90deg, #a67c52 0%, #8c6239 100%);
+}
+
+.material-icon.grass {
+  background-color: #4caf50;
+  background-image: linear-gradient(45deg, #4caf50 25%, #66bb6a 25%, #66bb6a 50%, #4caf50 50%, #4caf50 75%, #66bb6a 75%, #66bb6a 100%);
+  background-size: 8px 8px;
+}
+
+/* Añadir el estilo para el icono de mármol */
+.material-icon.marble {
+  background-color: #d0d0d0;
+  background-image: linear-gradient(90deg, #cfcfcf 0%, #8c6239 100%);
+}
+
+/* Ocultar el control anterior de materiales */
+.floor-material-control {
+  display: none;
+}
+
+/* Estilos para el indicador de control por teclado */
+.keyboard-controls-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 100;
+}
+
+.keyboard-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(30, 30, 30, 0.6);
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.keyboard-toggle:hover {
+  background-color: rgba(40, 40, 40, 0.8);
+  transform: translateY(-2px);
+}
+
+.keyboard-toggle.active {
+  background-color: rgba(74, 144, 226, 0.3);
+  border: 1px solid rgba(74, 144, 226, 0.5);
+}
+
+.keyboard-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.key-row {
+  display: flex;
+}
+
+.keyboard-status {
+  font-size: 12px;
+  color: white;
+  margin-top: 5px;
+}
+
+/* Animación para las teclas cuando están activas */
+.keyboard-toggle.active .key {
+  animation: key-pulse 2s infinite;
+}
+
+@keyframes key-pulse {
+  0% {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Estilos para el modal del modelo 3D */
+.model-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.model-modal {
+  width: 80%;
+  height: 80%;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.model-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.model-modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.model-modal-close {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.model-modal-close:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #e74c3c;
+}
+
+.model-modal-content {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.model-modal-footer {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #e0e0e0;
+  background-color: #f5f5f5;
+}
+
+.model-modal-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.model-modal-price {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.model-modal-type {
+  font-size: 14px;
+  color: #666;
+}
+
+.model-modal-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.model-modal-actions button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.model-modal-actions .buy-button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+}
+
+.model-modal-actions .buy-button:hover {
+  background-color: #3a80d2;
+  transform: translateY(-2px);
+}
+
+/* Botón para ver el modelo en detalle */
+.view-model-button {
+  background-color: rgba(40, 40, 40, 0.05);
+  color: #555;
+  border: 1px solid rgba(40, 40, 40, 0.2);
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  width: 100%;
+  justify-content: center;
+}
+
+.view-model-button:hover {
+  background-color: rgba(40, 40, 40, 0.1);
+  transform: translateY(-2px);
+}
+
+.view-model-button svg {
+  margin-right: 8px;
+} 

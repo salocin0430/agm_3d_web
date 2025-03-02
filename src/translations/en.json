@@ -1,0 +1,104 @@
+{
+    "header": {
+        "home": "Home",
+        "projects": "Projects",
+        "about": "About",
+        "services": "Services",
+        "letsTalk": "Let´s Talk"
+    },
+    "footer": {},
+    "home": {
+        "residential": "Residential",
+        "interior": "Interior",
+        "design": "Design",
+        "viewProject": "View project",
+        "metatitle": "Design Architect Studio | Architecture , Interior Design , Visualization Solutions |LAO Architects Home",
+        "metadescription": "A studio specializing in residential architecture, interior design, and realistic visualization"
+    },
+    "projects": {
+        "textAnimate": {
+            "create": "CREATE",
+            "believe": "BELIEVE",
+            "transform": "TRANSFORM",
+            "additionalTexts1": "spaces that captivate the senses",
+            "additionalTexts2": "in architecture that transcends boundaries",
+            "additionalTexts3": "dreams into realities"
+        },
+        "all": "ALL",
+        "home": "HOME",
+        "comercial": "COMERCIAL",
+        "interior_design": "INTERIOR DESIGN",
+        "architect": "ARCHITECT",
+        "visualization": "VISUALIZATION",
+        "metatitle": "Our projects, architectural visualization, design, interior design portafolio |LAO Architects Projects",
+        "metadescription": "Specializing in residential architecture, interior design and High-end quality of 3D visualization of architectural and interior design projects"
+    },
+    "project": {
+        "area": "Area",
+        "year": "Year",
+        "visualization": "Visualization",
+        "location": "Location",
+        "design": "Design"
+    },
+    "contact": {
+        "letsTalk": "Let´s Talk",
+        "name": "Name",
+        "surname": "Surname",
+        "email": "Email",
+        "phone": "Phone",
+        "reason": "Let´s Talk",
+        "send": "Send",
+        "metatitle": "Contact Us | LAO Architects: Get in Touch for Architectural, Interior Design, and Visualization Services |LAO Architects Contact",
+        "metadescription": "Reach out to LAO Architects for inquiries, consultations, or project collaborations. Whether you're interested in architectural design, interior solutions, or visualization services, we're here to bring your ideas to life. Let's start transforming your vision into reality today."
+    },
+    "services": {
+        "metatitle": "Services | LAO Architects: Architecture, Interior Design, Visualization |LAO Architects Services",
+        "metadescription": "empowering clients worldwide with innovative architectural designs, intricate interior solutions, and top-tier visualization services. With a focus on remote collaboration, we seamlessly connect with clients from every corner of the globe, transforming visions into reality.",
+        "next": "Next",
+        "prev": "Prev",
+        "service1": {
+            "title": "Residential Design",
+            "description1": "We offer comprehensive residential design services, creating spaces that reflect your lifestyle and needs.",
+            "description2": "From conceptualization to final plans, we take care of every detail to ensure your home is functional, aesthetic, and sustainable.",
+            "description3": "We work closely with you to understand your preferences and bring your dreams to life in a home you will enjoy for many years."
+        },
+        "service2": {
+            "title": "Interior Design",
+            "description1": "We transform your interior spaces with an innovative and personalized approach.",
+            "description2": "Our interior design service encompasses everything from material and color selection to furniture arrangement and lighting.",
+            "description3": "We create welcoming and functional environments that enhance your quality of life, optimizing space usage and reflecting your personality in every corner."
+        },
+        "service3": {
+            "title": "Commercial Design",
+            "description1": "We help boost your business with commercial designs that attract customers and maximize operational efficiency.",
+            "description2": "From stores and offices to restaurants and commercial spaces, we create environments that stand out for their functionality, aesthetics, and ability to provide a memorable experience to your customers.",
+            "description3": "We ensure that your commercial space reflects your brand and business objectives."
+        },
+        "service4": {
+            "title": "Visualization",
+            "description1": "We use advanced visualization tools to let you see and experience your projects before they are built.",
+            "description2": "We offer 3D renderings, virtual tours, and detailed visual presentations that allow you to make informed decisions and clearly visualize the final result.",
+            "description3": "This service is ideal for ensuring every detail aligns with your expectations."
+        },
+        "service5": {
+            "title": "Remodeling",
+            "description1": "We transform and revitalize your existing spaces to better suit your current needs.",
+            "description2": "Our remodeling service includes everything from small changes to complete renovations, always focusing on improving functionality, aesthetics, and comfort.",
+            "description3": "We work efficiently and carefully to minimize disruptions and ensure high-quality results."
+        },
+        "service6": {
+            "title": "Project Development",
+            "description1": "We offer a comprehensive project development service, from the initial idea to final delivery.",
+            "description2": "We handle planning, management, and supervision of all project phases, ensuring deadlines, budgets, and quality standards are met.",
+            "description3": "Our experience and dedication guarantee the success of each project, adapting to each client's specifications and requirements."
+        }
+    },
+    "error": {
+        "error404": "Error 404",
+        "pageNotFound": "Page not Found!"
+    },
+    "maintenance": {
+        "maintenance": "MAINTENANCE",
+        "text1": "we are improving for you"
+    }
+}

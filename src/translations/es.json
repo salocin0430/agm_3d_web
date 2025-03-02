@@ -1,0 +1,104 @@
+{
+    "header": {
+        "home": "Inicio",
+        "projects": "Proyectos",
+        "about": "Nosotros",
+        "services": "Servicios",
+        "letsTalk": "Hablemos"
+    },
+    "footer": {},
+    "home": {
+        "residential": "Residencial",
+        "interior": "Interior",
+        "design": "Diseño",
+        "viewProject": "Ver Proyecto",
+        "metatitle": "Estudio de Arquitectura  y Diseño | Arquitectura, Diseño de Interiores, Soluciones de Visualización |LAO Architects Inicio",
+        "metadescription": "estudio de arquitectura especializado en diseño de viviendas, interiores y visualización realista"
+    },
+    "projects": {
+        "textAnimate": {
+            "create": "CREAMOS",
+            "believe": "CREEMOS",
+            "transform": "TRANSFORMAMOS",
+            "additionalTexts1": "espacios que cautivan los sentidos",
+            "additionalTexts2": "en arquitectura que trasciende fronteras",
+            "additionalTexts3": "sueños en realidades"
+        },
+        "all": "Todo",
+        "home": "HOGAR",
+        "comercial": "Comercial",
+        "interior_design": "Interiores",
+        "architect": "Arquitectura",
+        "visualization": "Visualización",
+        "metatitle": "Nuestros proyectos, visualización arquitectónica, diseño, portafolio de diseño de interiores |LAO Architects Proyectos",
+        "metadescription": "Especializados en arquitectura residencial, diseño de interiores y visualización 3D de alta calidad para proyectos arquitectónicos y de diseño de interiores"
+    },
+    "project": {
+        "area": "Area",
+        "year": "Año",
+        "visualization": "Visualizado",
+        "location": "Locacion",
+        "design": "Diseño"
+    },
+    "contact": {
+        "letsTalk": "Hablemos",
+        "name": "Nombre",
+        "surname": "Apellido",
+        "email": "Email",
+        "phone": "Telefono",
+        "reason": "Hablemos",
+        "send": "Enviar",
+        "metatitle": "Contáctanos | LAO Architects: Ponte en Contacto para Servicios de Arquitectura, Diseño de Interiores y Visualización |LAO Architects Contacto",
+        "metadescription": "Contacta con LAO Architects para consultas, asesoramiento o colaboraciones en proyectos. Ya sea que estés interesado en diseño arquitectónico, soluciones interiores o servicios de visualización, estamos aquí para hacer realidad tus ideas. Comencemos a transformar tu visión en realidad hoy mismo."
+    },
+    "services": {
+        "metatitle": "Servicios | LAO Architects: Arquitectura, Diseño de Interiores, Visualización |LAO Architects Servicios",
+        "metadescription": "Empoderando a clientes en todo el mundo con diseños arquitectónicos innovadores, soluciones interiores intrincadas y servicios de visualización de primera categoría. Con un enfoque en la colaboración remota, nos conectamos sin problemas con clientes de todos los rincones del mundo, transformando visiones en realidad.",
+        "next": "Siguiente",
+        "prev": "Anterior",
+        "service1": {
+            "title": "Diseño de Vivienda",
+            "description1": "Ofrecemos servicios completos de diseño de vivienda, creando espacios que reflejan tu estilo de vida y necesidades.",
+            "description2": "Desde la conceptualización hasta los planos finales, nos encargamos de cada detalle para asegurar que tu hogar sea funcional, estético y sostenible.",
+            "description3": "Trabajamos de cerca contigo para entender tus preferencias y materializar tus sueños en una vivienda que disfrutarás durante muchos años."
+        },
+        "service2": {
+            "title": "Diseño de Interiores",
+            "description1": "Transformamos tus espacios interiores con un enfoque innovador y personalizado.",
+            "description2": "Nuestro servicio de diseño de interiores abarca desde la selección de materiales y colores hasta la disposición del mobiliario y la iluminación.",
+            "description3": "Creamos ambientes acogedores y funcionales que mejoran tu calidad de vida, optimizando el uso del espacio y reflejando tu personalidad en cada rincón."
+        },
+        "service3": {
+            "title": "Diseño Comercial",
+            "description1": "Ayudamos a potenciar tu negocio mediante diseños comerciales que atraen a tus clientes y maximizan la eficiencia operativa.",
+            "description2": "Desde tiendas y oficinas hasta restaurantes y locales comerciales, creamos espacios que destacan por su funcionalidad, estética y capacidad para proporcionar una experiencia memorable a tus clientes. ",
+            "description3": "Nos aseguramos de que tu espacio comercial sea un reflejo de tu marca y objetivos empresariales."
+        },
+        "service4": {
+            "title": "Visualización",
+            "description1": "Utilizamos herramientas avanzadas de visualización para que puedas ver y experimentar tus proyectos antes de que se construyan.",
+            "description2": "Ofrecemos renderizados en 3D, recorridos virtuales y presentaciones visuales detalladas que te permiten tomar decisiones informadas y visualizar el resultado final con claridad.",
+            "description3": "Este servicio es ideal para asegurar que cada detalle esté alineado con tus expectativas."
+        },
+        "service5": {
+            "title": "Remodelaciones",
+            "description1": "Transformamos y revitalizamos tus espacios existentes para que se adapten mejor a tus necesidades actuales. ",
+            "description2": "Nuestro servicio de remodelaciones incluye desde pequeños cambios hasta renovaciones completas, siempre enfocándonos en mejorar la funcionalidad, estética y confort de tu espacio.",
+            "description3": "Trabajamos de manera eficiente y cuidadosa para minimizar las interrupciones y garantizar resultados de alta calidad."
+        },
+        "service6": {
+            "title": "Desarrollo de Proyectos",
+            "description1": "Ofrecemos un servicio integral de desarrollo de proyectos, desde la idea inicial hasta la entrega final. ",
+            "description2": "Nos encargamos de la planificación, gestión y supervisión de todas las fases del proyecto, asegurando que se cumplan los plazos, presupuestos y estándares de calidad. ",
+            "description3": "Nuestra experiencia y dedicación garantizan que cada proyecto sea un éxito, adaptándonos a las especificaciones y requisitos de cada cliente."
+        }
+    },
+    "error": {
+        "error404": "Error 404",
+        "pageNotFound": "Pagina no encontrada!"
+    },
+    "maintenance": {
+        "maintenance": "MANTENIMIENTO",
+        "text1": "estamos mejorando para ti"
+    }
+}

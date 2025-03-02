@@ -1,0 +1,125 @@
+.page {
+  opacity: 1;
+  justify-content: center;
+  display: flex;
+  height: 100%;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  gap: 40px;
+}
+
+.contact .heading {
+  color: rgb(44, 43, 43);
+  position: absolute;
+  top: 0px;
+  font-size: 10vw;
+  left: auto;
+  z-index: -1;
+}
+
+.contact .contact-image {
+  flex-basis: 25%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-image img {
+  height: 100%;
+}
+
+.contact .section-information {
+  flex-basis: 80%;
+  display: flex;
+}
+
+.contact .contact-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contact-form .input-form {
+  flex-basis: 50%;
+  box-sizing: border-box;
+  max-width: calc(50% - 10px);
+  /* Tamaño máximo del ancho del elemento */
+  max-height: 100%;
+  margin-right: 10px;
+  margin-bottom: 25px;
+}
+
+.contact-form .textarea-form {
+  flex-basis: 100%;
+  max-width: calc(100% - 20px);
+}
+
+.contact .contact-sub {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+input[type="text"],
+textarea {
+  border: none;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  outline: none;
+  background: transparent;
+  resize: none;
+  width: calc(80%);
+  margin-top: 0px;
+  color: #ffffff;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+textarea {
+  width: 92%
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  box-shadow: 0 1px 0 rgb(255, 255, 255);
+}
+
+.contact label {
+  font-weight: 500;
+  color: #ffffff;
+}
+
+
+/*RESPONSIVE*/
+@media (max-width: 966px) {
+  .contact {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    gap: 40px;
+  }
+
+  .contact .contact-image {
+    flex-basis: 25%;
+    display: flex;
+    flex-direction: column;
+    align-content: ;
+    justify-content: center;
+  }
+
+  .contact .heading {
+    color: rgb(44, 43, 43);
+    position: absolute;
+    top: 4%;
+    font-size: 7vh;
+    left: 10%;
+    z-index: -1;
+
+    /* Rotate the text vertically */
+    transform-origin: left top;
+  }
+}

@@ -1,0 +1,43 @@
+.animated-text{
+  margin-bottom: 120px;
+  margin-left: 5vh;
+  height: 50px;
+}
+
+.animated-text .video-word{
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  color: #DCDCDC;
+  position: absolute;
+}
+
+.animated-text .video-text{
+  color: #858585;
+  margin-top: 65px;
+  font-size: 25px;
+}
+
+.margin-auto{
+  margin: auto;
+}
+/*RESPONSIVE*/
+@media (max-width: 966px) {
+  .animated-text{
+    margin-bottom: 80px;
+    margin-left: 0.4vh;
+    height: 5vw;
+  }
+  .animated-text .video-word{
+    font-size: 3.08vh;
+    font-weight: 700;
+    letter-spacing: 8px;
+    color: #DCDCDC;
+    position: absolute;
+  }
+  .animated-text .video-text{
+    color: #858585;
+    margin-top: 5vh;
+    font-size: 1.9vh;
+  }
+}

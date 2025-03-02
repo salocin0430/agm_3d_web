@@ -1,0 +1,116 @@
+/*Footer*/
+.footer {
+  display: flex;
+  min-height: 40px;
+
+  font-size: 14px;
+  margin-top: 2px;
+  padding-top: 45px;
+  /*border-top: 2px solid black;*/
+  color: #444;
+  height: 100px;
+  align-items: center;
+}
+
+.footer .slogan img {
+  width: calc(4421px / 23);
+  height: calc(863px / 23);
+  margin-bottom: 25px;
+  margin-right: 28px;
+}
+
+.footer .networks-icon {
+  display: flex;
+  flex-grow: 1;
+  flex-basis: 25%;
+  gap: 20px;
+  margin-bottom: 12px;
+  margin-left: 0px;
+}
+
+.footer .behance img {
+  margin-top: 0px;
+}
+
+.footer .icon img {
+  width: 16px;
+  /* Puedes ajustar el porcentaje según tus necesidades */
+  height: auto;
+  opacity: 0.7;
+}
+
+.footer .copy_right {
+  flex-grow: 1;
+  flex-basis: 50%;
+  color: rgba(127, 140, 153, 0.788);
+}
+
+.footer .text-copyright {
+  font-size: 12px;
+  color: #d3d3d3;
+}
+
+.footer .slogan {
+  display: flex;
+  flex-grow: 1;
+  flex-basis: 25%;
+  font-size: 20px;
+  line-height: 20px;
+  justify-content: flex-end;
+  color: rgba(127, 140, 153, 0.788);
+}
+
+.footer .heading {
+  font-weight: 500;
+  color: rgba(240, 255, 255, 0.774);
+  letter-spacing: 3px;
+}
+
+
+.footer .font-dark {
+  color: rgb(0, 0, 0);
+}
+
+.footer .font-light-color {
+  color: #d3d3d3;
+}
+
+/*RESPONSIVE*/
+@media (max-width: 966px) {
+  .footer .slogan img {
+    width: calc(4421px / 23);
+    height: calc(863px / 23);
+    margin-bottom: 0px;
+    margin-right: 0px;
+  }
+
+  .footer .networks-icon {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 25%;
+    gap: 3vw;
+    margin-bottom: 0px;
+    margin-left: 0px;
+  }
+
+  .footer .text-copyright {
+    font-size: 1vh;
+  }
+
+  .footer {
+    display: flex;
+    min-height: 40px;
+    font-size: 14px;
+    margin-bottom: 3vw;
+    margin-top: 0;
+    padding-top: 45px;
+    /*border-top: 2px solid black;*/
+    color: #444;
+    height: 0px;
+    align-items: center;
+  }
+
+  .footer .font-dark {
+    color: rgb(0, 0, 0);
+  }
+}

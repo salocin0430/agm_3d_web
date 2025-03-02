@@ -1,0 +1,200 @@
+{
+  "id": "13",
+  "name": "Casa de Niños",
+  "defaultTime": 12,
+  "cameraPosition": [0, 2, 5],
+  "cameraTarget": [0, 1, 0],
+  "floorMaterial": "marble",
+  "baseModel": {
+    "id": "childrenHouse",
+    "name": "Habitacion Niña",
+    "type": "Estructura",
+    "position": [0, 0, 0],
+    "rotation": [0, 0, 0],
+    "scale": [1, 1, 1],
+    "typeModel": "obj",
+    "path": "/models/13/habitacion_nina/habitacion_nina.obj",
+    "mtlPath": "/models/13/habitacion_nina/habitacion_nina.mtl",
+    "interactive": false,
+    "hidden": false,
+    "maps": {
+      "normal": "",
+      "roughness": "",
+      "metalness": "",
+      "ao": "",
+      "emissive": ""
+    },
+    "materialProperties": {
+      "roughness": 0.5,
+      "metalness": 0.0,
+      "emissiveIntensity": 0.0,
+      "aoMapIntensity": 1.0,
+      "normalScale": 1.0,
+      "reflective": false
+    }
+  },
+  "objects": [
+    {
+      "id": "robot2",
+      "path": "/models/default/robota/scene.gltf",
+      "position": [0, 0, 0],
+      "rotation": [0, 0, 0],
+      "scale": [1, 1, 1],
+      "typeModel": "glb", 
+      "interactive": true,
+      "hidden": true,
+      "maps": {
+        "normal": "",
+        "roughness": "",
+        "metalness": "",
+        "ao": "",
+        "emissive": ""
+      },
+      "materialProperties": {
+        "roughness": 0.5,
+        "metalness": 0.0,
+        "emissiveIntensity": 0.0,
+        "aoMapIntensity": 1.0,
+        "normalScale": 1.0,
+        "reflective": false
+      }
+    },
+    {
+      "id": "rattanLamp",
+      "name": "Lámpara de Ratán",
+      "type": "Iluminación",
+      "position": [1, 2, 0],
+      "rotation": [0, 0, 0],
+      "scale": [0.5, 0.5, 0.5],
+      "typeModel": "obj",
+      "path": "/models/13/rattan_lamp/RATTAN+PENDANT+LAMP.obj",
+      "mtlPath": "/models/13/rattan_lamp/RATTAN+PENDANT+LAMP.mtl",
+      "interactive": true,
+      "hidden": true,
+      "maps": {
+        "normal": "",
+        "roughness": "",
+        "metalness": "",
+        "ao": "",
+        "emissive": ""
+      },
+      "materialProperties": {
+        "roughness": 0.5,
+        "metalness": 0.0,
+        "emissiveIntensity": 0.0,
+        "aoMapIntensity": 1.0,
+        "normalScale": 1.0,
+        "reflective": false
+      }
+    },
+    {
+      "id": "mesaNina2",
+      "name": "Mesa de Niña",
+      "type": "Mobiliario",
+      "description": "Mesa de niña con un diseño moderno y funcional que se adapta a cualquier espacio.",
+      "price": 129.99,
+      "currency": "€",
+      "position": [2, 0, -1],
+      "rotation": [0, 0, 0],
+      "scale": [1, 1, 1],
+      "typeModel": "obj",
+      "path": "/models/13/mesa_nina/mesa_nina.obj",
+      "mtlPath": "/models/13/mesa_nina/mesa_nina.mtl",
+      "interactive": true,
+      "hidden": false,
+      "maps": {
+        "normal": "/textures/materials/plastic/Poliigon_PlasticMoldDryBlast_7495_Normal.png",
+        "roughness": "/textures/materials/plastic/Poliigon_PlasticMoldDryBlast_7495_Roughness.jpg",
+        "metalness": "",
+        "ao": "",
+        "emissive": ""
+      },
+      "materialProperties": {
+        "roughness": 1,
+        "metalness": 1,
+        "emissiveIntensity": 0.0,
+        "aoMapIntensity": 1,
+        "normalScale": 1,
+        "reflective": false
+      }
+    },
+    {
+        "id": "sillaBlanca",
+        "name": "Silla Blanca",
+        "type": "Mobiliario",
+        "description": "Silla blanca con ruedas, con un diseño moderno y ergonómico ideal para el estudio.",
+        "price": 89.99,
+        "currency": "€",
+        "position": [2, 0, -1],
+        "rotation": [0, 0, 0],
+        "scale": [1, 1, 1],
+        "typeModel": "obj",
+        "path": "/models/13/silla_blanca/silla_blanca.obj",
+        "mtlPath": "/models/13/silla_blanca/silla_blanca.mtl",
+        "interactive": true,
+        "hidden": false,
+        "maps": {
+          "normal": "/textures/materials/plastic/Poliigon_PlasticMoldDryBlast_7495_Normal.png",
+          "roughness": "/textures/materials/plastic/Poliigon_PlasticMoldDryBlast_7495_Roughness.jpg",
+          "metalness": "",
+          "ao": "",
+          "emissive": ""
+        },
+        "materialProperties": {
+          "roughness": 1,
+          "metalness": 1,
+          "emissiveIntensity": 0.0,
+          "aoMapIntensity": 1,
+          "normalScale": 1,
+          "reflective": false
+        }
+      },
+      {
+        "id": "sillaAzul",
+        "name": "Silla Azul",
+        "type": "Mobiliario",
+        "position": [2, 0, -1],
+        "rotation": [0, 0, 0],
+        "scale": [1, 1, 1],
+        "typeModel": "obj",
+        "path": "/models/13/silla_azul/silla_azul.obj",
+        "mtlPath": "/models/13/silla_azul/silla_azul.mtl",
+        "interactive": true,
+        "hidden": false,
+        "maps": {               
+          "normal": "/textures/materials/plastic/Poliigon_PlasticMoldDryBlast_7495_Normal.png",
+          "roughness": "/textures/materials/plastic/Poliigon_PlasticMoldDryBlast_7495_Roughness.jpg",
+          "metalness": "",
+          "ao": "",
+          "emissive": ""
+        },
+        "materialProperties": {
+          "roughness": 1,
+          "metalness": 1,
+          "emissiveIntensity": 0.0,
+          "aoMapIntensity": 1,
+          "normalScale": 0,
+          "reflective": false
+        }
+      }
+  ],
+  "lighting": {
+    "ambient": {
+      "color": "0xffffff",
+      "intensity": 0.4,
+      "name": "ambientLight"
+    },
+    "directional": {
+      "color": "0xffffff",
+      "intensity": 1.0,
+      "position": [10, 10, 10],
+      "castShadow": true,
+      "name": "mainLight"
+    }
+  },
+  "environment": {
+    "skyColor": "0x87ceeb",
+    "groundColor": "0x8b4513",
+    "fogEnabled": false
+  }
+} 

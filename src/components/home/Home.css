@@ -1,0 +1,85 @@
+/*Home*/
+.home h1{
+    font-family: 'Montserrat',Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-size: 30px;
+    margin-bottom: 0px;
+    color: rgba(213, 215, 223, 0.87);
+  }
+  
+  .home strong{
+    color: rgb(54, 107, 107);
+  }
+  
+  .home h2{
+    font-weight: lighter;
+    white-space: pre-line;
+    width: 100px;
+  }
+  
+  .home .project-name{
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #ffffff;
+    
+  }
+  
+  .home a{
+    color: #beb9b4;
+    text-decoration: none;
+    transition: all 300ms;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 3px;
+  }
+  
+  .content .home {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    margin-left: 180px;
+  }
+  
+  .home a:hover{
+    /*color: rgba(165, 42, 42, 0.651);*/
+    font-weight: 600;
+  }
+  
+  
+  
+  .home .heading{
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 0px;
+    color: rgba(240, 255, 255, 0.514);
+  }
+  
+  .home p{
+    color:rgb(134, 151, 165)
+  }
+
+/*RESPONSIVE*/
+@media (max-width: 966px) {
+.content .home {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    margin-left: 20vw;
+    }
+
+.home .project-name{
+    font-size: 5vh;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #ffffff;
+    }
+.home a{
+    color: #beb9b4;
+    text-decoration: none;
+    transition: all 300ms;
+    font-weight: 500;
+    font-size: 1.5vh;
+    letter-spacing: 3px;
+    }    
+}

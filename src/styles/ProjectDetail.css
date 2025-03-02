@@ -1,0 +1,408 @@
+/* Estilos para el encabezado del proyecto */
+.project-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.project-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+/* Estilos para el nuevo botón de experiencia 3D */
+.experience-3d-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #222;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 24px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0;
+  margin-bottom: 30px;
+  overflow: hidden;
+  width: 280px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+}
+
+.experience-3d-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  background-color: #333;
+}
+
+.experience-3d-button:active {
+  transform: translateY(-1px);
+}
+
+.experience-3d-button-content {
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.experience-3d-button-icon {
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.experience-3d-button-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-3d-button-title {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.experience-3d-button-subtitle {
+  font-size: 12px;
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+/* Efecto de partículas en el fondo */
+.experience-3d-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent 25%, rgba(255, 255, 255, 0.05) 50%, transparent 75%);
+  background-size: 200% 200%;
+  animation: shimmer 2s infinite linear;
+  z-index: 1;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 200%;
+  }
+}
+
+/* Efecto de brillo al pasar el mouse */
+.experience-3d-button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.experience-3d-button:hover::after {
+  opacity: 1;
+}
+
+/* Versión responsiva */
+@media (max-width: 768px) {
+  .experience-3d-button {
+    width: 100%;
+    padding: 14px 20px;
+  }
+}
+
+/* Diseño alternativo: Banner destacado en la parte superior */
+.project-3d-banner {
+  width: 100%;
+  background: linear-gradient(135deg, #222 0%, #444 100%);
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.banner-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.banner-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.banner-description {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 500px;
+}
+
+.banner-3d-button {
+  background-color: white;
+  color: #222;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.banner-3d-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.banner-3d-button svg {
+  margin-right: 10px;
+  fill: #222;
+}
+
+/* Botón 3D animado con cubo giratorio */
+.catalog-3d-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #222;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 16px 24px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 40px auto;
+  overflow: hidden;
+  width: auto;
+  max-width: 300px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  text-align: center;
+  justify-content: center;
+}
+
+.catalog-3d-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  background-color: #333;
+}
+
+.catalog-3d-content {
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.catalog-3d-cube {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+  perspective: 800px;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotate 8s infinite linear;
+}
+
+.cube-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.front {
+  transform: translateZ(15px);
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(15px);
+}
+
+.right {
+  transform: rotateY(90deg) translateZ(15px);
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(15px);
+}
+
+.top {
+  transform: rotateX(90deg) translateZ(15px);
+}
+
+.bottom {
+  transform: rotateX(-90deg) translateZ(15px);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateX(0) rotateY(0) rotateZ(0);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+.catalog-3d-text {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Efecto de brillo al pasar el mouse */
+.catalog-3d-button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.catalog-3d-button:hover::after {
+  opacity: 1;
+}
+
+/* Versión responsiva */
+@media (max-width: 768px) {
+  .catalog-3d-button {
+    width: 90%;
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+  
+  .catalog-3d-cube {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Limpieza de estilos anteriores y redefinición del botón flotante */
+.title-project {
+  position: relative; /* Asegurar que el contenedor sea relativo */
+}
+
+/* Reposicionando el botón para que se integre con la navegación superior */
+.title-project .floating-3d-button {
+  position: fixed;
+  top: 15px; /* Alineado con la navegación */
+  right: 550px; /* Posicionado en el centro, donde está el círculo rojo */
+  background-color: transparent;
+  border: none;
+  width: 70px; /* Aumentado el tamaño */
+  height: 70px; /* Aumentado el tamaño */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.title-project .floating-3d-button:hover {
+  transform: scale(1.1);
+}
+
+.title-project .floating-3d-cube {
+  width: 45px; /* Aumentado el tamaño del cubo */
+  height: 45px; /* Aumentado el tamaño del cubo */
+  perspective: 800px;
+}
+
+.title-project .cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotate 8s infinite linear;
+}
+
+.title-project .cube-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.title-project .floating-3d-text {
+  font-size: 14px; /* Aumentado el tamaño del texto */
+  font-weight: 600;
+  color: white;
+  margin-top: 5px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Ajuste responsivo */
+@media (max-width: 1200px) {
+  .title-project .floating-3d-button {
+    right: 500px;
+  }
+}
+
+@media (max-width: 992px) {
+  .title-project .floating-3d-button {
+    right: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title-project .floating-3d-button {
+    top: 15px;
+    right: 100px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .title-project .floating-3d-cube {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .title-project .floating-3d-text {
+    font-size: 10px;
+  }
+} 

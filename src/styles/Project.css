@@ -1,0 +1,63 @@
+/* Estilos generales para la página de proyecto */
+.project-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.project-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.project-description, 
+.project-details {
+  margin-top: 40px;
+}
+
+.project-description h2,
+.project-details h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.project-description p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Estilos para estados de carga y error */
+.loading, 
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  font-size: 18px;
+  color: #666;
+}
+
+.error {
+  color: #d32f2f;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .project-container {
+    padding: 30px 15px;
+  }
+  
+  .project-title {
+    font-size: 28px;
+  }
+  
+  .project-description h2,
+  .project-details h2 {
+    font-size: 22px;
+  }
+} 

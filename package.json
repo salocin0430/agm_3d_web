@@ -1,0 +1,62 @@
+{
+  "name": "08-proyecto2",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/icons": "^4.11.3",
+    "@react-three/drei": "^9.99.5",
+    "@react-three/fiber": "^8.15.16",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.5.0",
+    "blurhash": "^2.0.5",
+    "framer-motion": "^10.12.16",
+    "i18next": "^23.2.8",
+    "i18next-browser-languagedetector": "^7.1.0",
+    "react": "^18.2.0",
+    "react-blurhash": "^0.3.0",
+    "react-dom": "^18.2.0",
+    "react-helmet-async": "^2.0.5",
+    "react-i18next": "^13.0.2",
+    "react-icons": "^4.9.0",
+    "react-intersection-observer": "^9.5.2",
+    "react-lazyload": "^3.2.1",
+    "react-responsive-masonry": "^2.1.7",
+    "react-router-dom": "^6.11.2",
+    "react-scripts": "5.0.1",
+    "react-spring": "^9.7.1",
+    "styled-components": "^5.3.10",
+    "tailwindcss": "^3.4.3",
+    "three": "^0.159.0",
+    "usehooks-ts": "^2.9.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/three": "^0.152.1"
+  }
+}

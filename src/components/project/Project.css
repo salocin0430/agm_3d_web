@@ -1,0 +1,184 @@
+.main-page {
+    position: relative;
+    min-height: 100vh;
+  }
+
+  .background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .background-image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .heading {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    z-index: 1;
+    color: #fff;
+  }
+  
+  .hide {
+    opacity: 0;
+  }
+  
+  .content-project {
+ 
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+  }
+  
+  .show {
+    opacity: 1;
+  }
+
+  .title-project{
+    align-items: center;
+    display: flex;
+    height: 100%;
+    margin-left: 20vw; 
+    margin-bottom: 8px;
+    width: 100px;
+    color: #ffffff;
+    margin-top: 0px;
+  }
+
+  .font-title{
+    white-space: pre-line;
+    font-weight: 600;
+    font-size: 50px;
+    margin-bottom: 0;
+  }
+
+  .darks{
+    color: #1a1a1a;
+    margin: 0;
+  }
+
+  .font-title .lights{
+    color: #ffffff;
+  }
+
+  .page-project{
+    align-items: center;
+    display: flex;
+    height: calc(100vh - 145px);
+  }
+
+  /*Fa down*/
+  .fa{
+    font-size: 60px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: lighter;
+  }
+  
+  .box-animate{
+    position: relative;
+    left: -3%;
+    animation-name: pippo;
+    animation-duration: 0.5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  .btn-scroll-down:hover  {
+    cursor: pointer;
+  }
+  
+  @keyframes pippo {
+    0% {top: -20%}
+    100% {top: -5%}
+  }
+
+  /*Project Description*/
+  .project-description{
+    display: flex;
+    margin-top: 70px;
+    margin-bottom: 90px;
+  }
+
+  .project-description .title{
+    flex-basis: 30%; /* Cada elemento ocupa el 50% del espacio vertical disponible */ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0px;
+  }
+
+  .project-description .information{
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+    flex-basis: 70%; /* Cada elemento ocupa el 50% del espacio vertical disponible */
+  }
+
+  .project-description .information .data{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 30px;
+    flex-basis: 20%;
+  }
+  /*RESPONSIVE*/
+@media (max-width: 966px) {  
+    .page-project .title-project{
+      font-size: 5vh;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }  
+    .project-description{
+      display: flex;
+      flex-direction: column;
+      margin-top: 70px;
+      margin-bottom: 90px;
+    }  
+    .project-description .information .data {
+      display: flex;
+      flex-direction: column;
+      margin-left: 20px;
+      margin-right: 50px;
+      margin-top: 30px;
+      flex-basis: 30%;
+      box-sizing: border-box;
+    }
+
+    .project-description .title{
+      flex-basis: 30%; /* Cada elemento ocupa el 50% del espacio vertical disponible */ 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .project-description .title{
+      padding-left: 15px;
+    }
+  }
+
+  .view-3d-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .view-3d-button:hover {
+    background-color: #45a049;
+  }
