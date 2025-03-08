@@ -2118,6 +2118,7 @@ export default function ProjectViewer3DPure({ modelUrl, projectId, onClose }) {
           </div>
           <div className="elements-list">
             {loadedObjects.map(obj => (
+              obj.type != 'Estructura' && (
               <div 
                 key={obj.id} 
                 className={`element-item ${selectedObject && selectedObject.userData.id === obj.id ? 'selected' : ''}`}
@@ -2162,6 +2163,7 @@ export default function ProjectViewer3DPure({ modelUrl, projectId, onClose }) {
                   <div className="element-type">{obj.type}</div>
                 </div>
               </div>
+              )
             ))}
           </div>
         </div>
@@ -2234,6 +2236,7 @@ export default function ProjectViewer3DPure({ modelUrl, projectId, onClose }) {
                   </div>
                 )}
                 
+                {/* Comentar}
                 <div className="detail-row">
                   <span>Posición</span>
                   <span>
@@ -2242,7 +2245,7 @@ export default function ProjectViewer3DPure({ modelUrl, projectId, onClose }) {
                     Z: {selectedObject.position.z.toFixed(2)}
                   </span>
                 </div>
-                
+                */}
                 <div className="detail-actions">
                   {/* Botón para ver el modelo en detalle */}
                   <button 

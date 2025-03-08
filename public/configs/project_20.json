@@ -303,6 +303,8 @@
         "interactive": true,
         "hidden": false,
         "image": "/models/20/silla_azul/sillaazul.png",
+        "price": 102.99,
+        "currency": "€",
         "maps": {               
           "normal": "",
           "roughness": "",

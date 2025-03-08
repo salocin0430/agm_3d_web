@@ -118,7 +118,15 @@ export const projectService = {
             try {
                 // Obtener proyectos desde el servidor
                 const response = await axios.get(process.env.REACT_APP_PROJECTS_API_URL + '/api/projectsByCompany/' + process.env.REACT_APP_COMPANY_ID);
-                return response.data; // Suponiendo que la respuesta contiene los proyectos
+                
+                // Filtrar para mostrar SOLO los proyectos con IDs 7, 13 y 20
+                response.data = response.data.filter((project) => {
+                    console.log(project.id);
+                    return project.id == '7' || project.id == '13' || project.id == '20';
+                });
+                
+                console.log(response.data);
+                return response.data; // Devolver solo los proyectos filtrados
             } catch (error) {
                 console.error('Error al obtener proyectos del servidor:', error);
                 return []; // En caso de error, devuelve un arreglo vacío

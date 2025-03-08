@@ -335,9 +335,41 @@
           "metalness": 1,
           "emissiveIntensity": 0.0,
           "aoMapIntensity": 1,
-          "normalScale": 0,
+         "normalScale": 0,
           "reflective": false
-        }
+        } 
+      },
+      {
+        "id": "camaAzul",
+        "name": "Cama Stif",
+        "type": "Mobiliario",
+        "description": "Cama Stif con un diseño moderno ideal para tus hijos",
+        "position": [2.62, 0.00, -2.08],
+        "rotation": [0, 0, 0],
+        "scale": [1, 1, 1],
+        "typeModel": "obj",
+        "path": "/models/13/cama/cama.obj",
+        "mtlPath": "/models/13/cama/cama.mtl",
+        "interactive": true,
+        "hidden": false,
+        "image": "/models/13/cama/cama.png",
+        "price": 102.99,
+        "currency": "€",
+        "maps": {               
+          "normal": "",
+          "roughness": "",
+          "metalness": "",
+          "ao": "",
+          "emissive": ""
+        },
+        "materialProperties": {
+          "roughness": 1,
+          "metalness": 1,
+          "emissiveIntensity": 0.0,
+          "aoMapIntensity": 1,
+         "normalScale": 0,
+          "reflective": false
+        } 
       }
   ],
   "lighting": {
