@@ -94,7 +94,7 @@
       "description": "Mesa de niña con un diseño moderno y funcional que se adapta a cualquier espacio.",
       "price": 129.99,
       "currency": "€",
-      "position": [2, 0, -1],
+      "position": [-1.28, 0.1, -0.90],
       "rotation": [0, 0, 0],
       "scale": [1, 1, 1],
       "typeModel": "obj",
@@ -119,13 +119,13 @@
       }
     },
     {
-        "id": "sillaBlanca",
+        "id": "sillaBlanca2",
         "name": "Silla Blanca",
         "type": "Mobiliario",
         "description": "Silla blanca con ruedas, con un diseño moderno y ergonómico ideal para el estudio.",
         "price": 89.99,
         "currency": "€",
-        "position": [2, 0, -1],
+        "position": [-0.86, 0.1, -1.76],
         "rotation": [0, 0, 0],
         "scale": [1, 1, 1],
         "typeModel": "obj",
@@ -150,6 +150,161 @@
         }
       },
       {
+        "id": "sillaBlanca",
+        "name": "Silla Blanca",
+        "type": "Mobiliario",
+        "description": "Silla blanca con ruedas, con un diseño moderno y ergonómico ideal para el estudio.",
+        "price": 89.99,
+        "currency": "€",
+        "position": [-1.75, 0.1, -1.39],
+        "rotation": [0, 0, 0],
+        "scale": [1, 1, 1],
+        "typeModel": "obj",
+        "path": "/models/13/silla_blanca/silla_blanca.obj",
+        "mtlPath": "/models/13/silla_blanca/silla_blanca.mtl",
+        "interactive": true,
+        "hidden": false,
+        "maps": {
+          "normal": "/textures/materials/plastic/Poliigon_PlasticMoldDryBlast_7495_Normal.png",
+          "roughness": "/textures/materials/plastic/Poliigon_PlasticMoldDryBlast_7495_Roughness.jpg",
+          "metalness": "",
+          "ao": "",
+          "emissive": ""
+        },
+        "materialProperties": {
+          "roughness": 1,
+          "metalness": 1,
+          "emissiveIntensity": 0.0,
+          "aoMapIntensity": 1,
+          "normalScale": 1,
+          "reflective": false
+        }
+      },
+      {
+        "id": "caballomesedor",
+        "name": "Caballo Mesedor",
+        "type": "Juguete",
+        "description": "Caballo de madera  con un diseño moderno y ergonómico ideal para el estudio y habitacion infantil",
+        "price": 102.99,
+        "currency": "€",
+        "position": [0.35, 0.1, -1.52],
+        "rotation": [0, 0, 0],
+        "scale": [1, 1, 1],
+        "typeModel": "obj",
+        "path": "/models/13/caballo_mesedor/caballo_mesedor.obj",
+        "mtlPath": "/models/13/caballo_mesedor/caballo_mesedor.mtl",
+        "interactive": true,
+        "hidden": false,
+        "maps": {
+          "normal": "",
+          "roughness": "",
+          "metalness": "",
+          "ao": "",
+          "emissive": ""
+        },
+        "materialProperties": {
+          "roughness": 1,
+          "metalness": 1,
+          "emissiveIntensity": 0.0,
+          "aoMapIntensity": 1,
+          "normalScale": 1,
+          "reflective": false
+        }
+      },
+      {
+        "id": "pelucheconejo",
+        "name": "Peluche Conejo",
+        "type": "Juguete",
+        "description": "Peluche de conejo con un diseño moderno ideal para tus hijos",
+        "price": 102.99,
+        "currency": "€",
+        "position": [1.10, 0.1, -1.30],
+        "rotation": [0, 0, 0],
+        "scale": [1, 1, 1],
+        "typeModel": "obj",
+        "path": "/models/13/peluche_conejo/peluche_conejo.obj",
+        "mtlPath": "/models/13/peluche_conejo/peluche_conejo.mtl",
+        "interactive": true,
+        "hidden": false,
+        "maps": {
+          "normal": "",
+          "roughness": "",
+          "metalness": "",
+          "ao": "",
+          "emissive": ""
+        },
+        "materialProperties": {
+          "roughness": 1,
+          "metalness": 1,
+          "emissiveIntensity": 0.0,
+          "aoMapIntensity": 1,
+          "normalScale": 1,
+          "reflective": false
+        }
+      },
+      {
+        "id": "pelucheosoaslan",
+        "name": "Peluche Oso Aslan",
+        "type": "Juguete",
+        "description": "Peluche de oso aslan con un diseño moderno ideal para tus hijos",
+        "price": 102.99,
+        "currency": "€",
+        "position": [-0.32, 0.1, -0.88],
+        "rotation": [0, 0, 0],
+        "scale": [1, 1, 1],
+        "typeModel": "obj",
+        "path": "/models/13/peluche_oso_aslan/peluche_oso_aslan.obj",
+        "mtlPath": "/models/13/peluche_oso_aslan/peluche_oso_aslan.mtl",
+        "interactive": true,
+        "hidden": false,
+        "maps": {
+          "normal": "",
+          "roughness": "",
+          "metalness": "",
+          "ao": "",
+          "emissive": ""
+        },
+        "materialProperties": {
+          "roughness": 1,
+          "metalness": 1,
+          "emissiveIntensity": 0.0,
+          "aoMapIntensity": 1,
+          "normalScale": 1,
+          "reflective": false
+        }
+      },
+      {
+        "id": "pelucheosodante",
+        "name": "Peluche Oso Dante",
+        "type": "Juguete",
+        "description": "Peluche de oso dante con un diseño moderno ideal para tus hijos",
+        "price": 102.99,
+        "currency": "€",
+        "position": [2.13, 0.1, -0.81],
+        "rotation": [0, 0, 0],
+        "scale": [1, 1, 1],
+        "typeModel": "obj",
+        "path": "/models/13/peluche_oso_dante/peluche_oso_dante.obj",
+        "mtlPath": "/models/13/peluche_oso_dante/peluche_oso_dante.mtl",
+        "interactive": true,
+        "hidden": false,
+        "maps": {
+          "normal": "",
+          "roughness": "",
+          "metalness": "",
+          "ao": "",
+          "emissive": ""
+        },
+        "materialProperties": {
+          "roughness": 1,
+          "metalness": 1,
+          "emissiveIntensity": 0.0,
+          "aoMapIntensity": 1,
+          "normalScale": 1,
+          "reflective": false
+        }
+      },
+      {
         "id": "sillaAzul",
         "name": "Silla Azul",
         "type": "Mobiliario",
@@ -160,7 +315,7 @@
         "path": "/models/13/silla_azul/silla_azul.obj",
         "mtlPath": "/models/13/silla_azul/silla_azul.mtl",
         "interactive": true,
-        "hidden": false,
+        "hidden": true,
         "maps": {               
           "normal": "/textures/materials/plastic/Poliigon_PlasticMoldDryBlast_7495_Normal.png",
           "roughness": "/textures/materials/plastic/Poliigon_PlasticMoldDryBlast_7495_Roughness.jpg",

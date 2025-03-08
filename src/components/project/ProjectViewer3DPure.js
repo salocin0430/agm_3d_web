@@ -382,7 +382,7 @@ export default function ProjectViewer3DPure({ modelUrl, projectId, onClose }) {
     
     // Configurar iluminación más natural
     // Luz ambiental con mayor intensidad para interiores
-    const ambientLight = new THREE.AmbientLight(0xffffff, 2.5); // Aumentado de 0.3 a 0.5
+    const ambientLight = new THREE.AmbientLight(0xffffff, 3); // Aumentado de 0.3 a 0.5
     ambientLight.name = 'ambientLight';
     scene.add(ambientLight);
     
