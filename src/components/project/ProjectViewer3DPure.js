@@ -139,6 +139,21 @@ export default function ProjectViewer3DPure({ modelUrl, projectId, onClose }) {
       // Cambiar el modo
       transformControlsRef.current.setMode(mode);
       
+      // Configurar los ejes visibles según el modo
+      if (mode === 'translate') {
+        transformControlsRef.current.showX = true;
+        transformControlsRef.current.showY = false; // Deshabilitar movimiento vertical
+        transformControlsRef.current.showZ = true;
+      } else if (mode === 'rotate') {
+        transformControlsRef.current.showX = false;
+        transformControlsRef.current.showY = true; // Solo permitir rotación en Y
+        transformControlsRef.current.showZ = false;
+      } else if (mode === 'scale') {
+        transformControlsRef.current.showX = true;
+        transformControlsRef.current.showY = true;
+        transformControlsRef.current.showZ = true;
+      }
+      
       // Volver a conectar los controles si había un objeto seleccionado
       if (currentObject) {
         setTimeout(() => {
@@ -231,6 +246,15 @@ export default function ProjectViewer3DPure({ modelUrl, projectId, onClose }) {
       // Verificar si el clic fue dentro del panel de detalles
       if (detailsPanel.contains(event.target)) {
         // Si el clic fue en el panel de detalles, no hacer nada
+        return;
+      }
+    }
+    
+    // Verificar si el clic fue en los botones de modo de transformación
+    const transformButtons = document.querySelectorAll('.transform-controls button, .transform-mode-button');
+    for (const button of transformButtons) {
+      if (button.contains(event.target)) {
+        // Si el clic fue en un botón de modo, no afectar la selección
         return;
       }
     }
@@ -1206,6 +1230,7 @@ export default function ProjectViewer3DPure({ modelUrl, projectId, onClose }) {
       // Crear nuevos controles
       const transformControls = new TransformControls(cameraRef.current, rendererRef.current.domElement);
       
+      transformControls.showY = false;
       // Configurar eventos
       transformControls.addEventListener('dragging-changed', (event) => {
         if (orbitControlsRef.current) {
@@ -1992,6 +2017,74 @@ export default function ProjectViewer3DPure({ modelUrl, projectId, onClose }) {
       }
     };
   }, [isModalOpen, selectedObject, initModalViewer]);
+  
+  // Modificar la función setView para que acepte un parámetro de duración
+  const setView = useCallback((viewType, duration = 500) => {
+    if (!cameraRef.current || !orbitControlsRef.current) return;
+    
+    // Guardar la posición y rotación actuales
+    const startPosition = cameraRef.current.position.clone();
+    const startTarget = orbitControlsRef.current.target.clone();
+    
+    // Definir la posición y objetivo según el tipo de vista
+    let targetPosition, targetTarget;
+    
+    switch (viewType) {
+      case 'front':
+        targetPosition = new THREE.Vector3(0, 2, 5);
+        targetTarget = new THREE.Vector3(0, 0, 0);
+        break;
+      case 'top':
+        targetPosition = new THREE.Vector3(0, 5, 0);
+        targetTarget = new THREE.Vector3(0, 0, 0);
+        break;
+      case 'side':
+        targetPosition = new THREE.Vector3(5, 2, 0);
+        targetTarget = new THREE.Vector3(0, 0, 0);
+        break;
+      default:
+        return;
+    }
+    
+    // Iniciar la animación
+    const startTime = Date.now();
+    
+    const animateCamera = () => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Función de easing para suavizar el movimiento
+      const easeProgress = progress < 0.5 
+        ? 2 * progress * progress 
+        : -1 + (4 - 2 * progress) * progress;
+      
+      // Interpolar la posición y el objetivo
+      cameraRef.current.position.lerpVectors(startPosition, targetPosition, easeProgress);
+      orbitControlsRef.current.target.lerpVectors(startTarget, targetTarget, easeProgress);
+      
+      // Actualizar los controles
+      orbitControlsRef.current.update();
+      
+      // Continuar la animación si no ha terminado
+      if (progress < 1) {
+        requestAnimationFrame(animateCamera);
+      }
+    };
+    
+    // Iniciar la animación
+    animateCamera();
+  }, []);
+
+  // Añadir un useEffect para animar la cámara al inicio
+  useEffect(() => {
+    // Esperar un momento para que todo esté inicializado
+    const timer = setTimeout(() => {
+      // Usar la función setView con una duración más larga para la animación inicial
+      setView('front', 2000);
+    }, 500);
+    
+    return () => clearTimeout(timer);
+  }, [setView]);
   
   // Renderizar el componente con UI mejorada
   return (
