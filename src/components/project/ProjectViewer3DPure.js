@@ -839,7 +839,8 @@ export default function ProjectViewer3DPure({ modelUrl, projectId, onClose }) {
             interactive: objectData.interactive === true,
             description: objectData.description || `Modelo ${objectData.name || objectData.id}`,
             price: objectData.price || 0,
-            currency: objectData.currency || '€'
+            currency: objectData.currency || '€',
+            image: objectData.image
           };
           
           // Aplicar propiedades de materiales personalizadas
@@ -994,7 +995,8 @@ export default function ProjectViewer3DPure({ modelUrl, projectId, onClose }) {
               interactive: objectData.interactive === true, // Usar === true para asegurar valor booleano
               originalPosition: [...objectData.position],
               originalRotation: objectData.rotation ? [...objectData.rotation] : [0, 0, 0],
-              originalScale: objectData.scale
+              originalScale: objectData.scale,
+              image: objectData.image
             };
             
             // Configurar sombras y metadatos para todas las partes del modelo
@@ -1038,7 +1040,8 @@ export default function ProjectViewer3DPure({ modelUrl, projectId, onClose }) {
                 id: objectData.id,
                 name: objectData.name,
                 description: objectData.description,
-                type: 'model'
+                type: 'model',
+                image: objectData.image
               }
             ]);
             
@@ -1085,7 +1088,8 @@ export default function ProjectViewer3DPure({ modelUrl, projectId, onClose }) {
             setLoadedObjects(prev => [...prev, { 
               id: objectData.id, 
               name: objectData.name || objectData.id, 
-              type: objectData.type || "Objeto" 
+              type: objectData.type || "Objeto",
+              image: objectData.image
             }]);
             
             console.log(`Objeto OBJ ${objectData.id} añadido a la escena`);
@@ -1143,6 +1147,7 @@ export default function ProjectViewer3DPure({ modelUrl, projectId, onClose }) {
       console.error("Error cargando modelo de fondo:", error);
     }
     */
+    setTimePreset('noon');
   }, [createFallbackModel, modelUrl, loadOBJWithMaterials]);
   
   // Definir handleResize fuera del useEffect
@@ -1332,7 +1337,7 @@ export default function ProjectViewer3DPure({ modelUrl, projectId, onClose }) {
       sunLight.color.copy(sunColor);
       sunLight.intensity = sunIntensity;
       ambientLight.color.copy(sunColor);
-      ambientLight.intensity = ambientIntensity + 2;
+      ambientLight.intensity = ambientIntensity + 2.1;
       
       // Actualizar exposición del renderer para mantener una iluminación consistente
       if (rendererRef.current) {
@@ -1557,7 +1562,7 @@ export default function ProjectViewer3DPure({ modelUrl, projectId, onClose }) {
     right.normalize();
     
     // Velocidad de movimiento
-    const speed = 0.1;
+    const speed = 0.07;
     
     // Aplicar movimiento según las teclas presionadas
     if (keysPressed.w) {
@@ -2122,26 +2127,34 @@ export default function ProjectViewer3DPure({ modelUrl, projectId, onClose }) {
                 }}
               >
                 <div className="element-icon">
-                  {obj.id === 'sofa' && (
-                    /* Icono weekend */
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
-                      <path d="M0 0h24v24H0V0z" fill="none"/>
-                      <path d="M21 9V7c0-1.65-1.35-3-3-3H6C4.35 4 3 5.35 3 7v2c-1.65 0-3 1.35-3 3v5c0 1.65 1.35 3 3 3h18c1.65 0 3-1.35 3-3v-5c0-1.65-1.35-3-3-3zM5 7c0-.55.45-1 1-1h12c.55 0 1 .45 1 1v2.78c-.61.55-1 1.34-1 2.22v2H6v-2c0-.88-.39-1.67-1-2.22V7zm17 10c0 .55-.45 1-1 1H3c-.55 0-1-.45-1-1-1-1v-5c0-.55.45-1 1-1s1 .45 1 1v4h16v-4c0-.55.45-1 1-1s1 .45 1 1v5z"/>
-                    </svg>
-                  )}
-                  {obj.id === 'robot' && (
-                    /* Icono smart_toy */
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
-                      <path d="M0 0h24v24H0V0z" fill="none"/>
-                      <path d="M20 9V7c0-1.1-.9-2-2-2h-3c0-1.66-1.34-3-3-3S9 3.34 9 5H6c-1.1 0-2 .9-2 2v2c-1.65 0-3 1.35-3 3v5c0 1.65 1.35 3 3 3h12c1.65 0 3-1.35 3-3v-5c0-1.65-1.35-3-3-3zm-2 10H6V7h12v12zm-9-6c-.83 0-1.5-.67-1.5-1.5S8.17 10 9 10s1.5.67 1.5 1.5S9.83 13 9 13zm6 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5z"/>
-                    </svg>
-                  )}
-                  {!['sofa', 'robot'].includes(obj.id) && (
-                    /* Icono view_in_ar por defecto */
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
-                      <path d="M0 0h24v24H0z" fill="none"/>
-                      <path d="M18.25 7.6l-5.5-3.18c-.46-.27-1.04-.27-1.5 0L5.75 7.6c-.46.27-.75.76-.75 1.3v6.35c0 .54.29 1.03.75 1.3l5.5 3.18c.46.27 1.04.27 1.5 0l5.5-3.18c.46-.27.75-.76.75-1.3V8.9c0-.54-.29-1.03-.75-1.3zM7 14.96v-4.62l4 2.32v4.61l-4-2.31zm5-4.03L8 8.61l4-2.31 4 2.31-4 2.32zm1 6.34v-4.61l4-2.32v4.62l-4 2.31z"/>
-                    </svg>
+                  {obj.image ? (
+                    // Si el objeto tiene una imagen definida, mostrarla
+                    <img 
+                      src={obj.image} 
+                      alt={obj.image} 
+                      style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '4px'}}
+                    />
+                  ) : (
+                    // Si no tiene imagen, mostrar el icono que ya tenías
+                    obj.id === 'sofa' ? (
+                      /* Icono weekend */
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
+                        <path d="M0 0h24v24H0V0z" fill="none"/>
+                        <path d="M21 9V7c0-1.65-1.35-3-3-3H6C4.35 4 3 5.35 3 7v2c-1.65 0-3 1.35-3 3v5c0 1.65 1.35 3 3 3h18c1.65 0 3-1.35 3-3v-5c0-1.65-1.35-3-3-3zM5 7c0-.55.45-1 1-1h12c.55 0 1 .45 1 1v2.78c-.61.55-1 1.34-1 2.22v2H6v-2c0-.88-.39-1.67-1-2.22V7zm17 10c0 .55-.45 1-1 1H3c-.55 0-1-.45-1-1-1-1v-5c0-.55.45-1 1-1s1 .45 1 1v4h16v-4c0-.55.45-1 1-1s1 .45 1 1v5z"/>
+                      </svg>
+                    ) : obj.id === 'robot' ? (
+                      /* Icono smart_toy */
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
+                        <path d="M0 0h24v24H0V0z" fill="none"/>
+                        <path d="M20 9V7c0-1.1-.9-2-2-2h-3c0-1.66-1.34-3-3-3S9 3.34 9 5H6c-1.1 0-2 .9-2 2v2c-1.65 0-3 1.35-3 3v5c0 1.65 1.35 3 3 3h12c1.65 0 3-1.35 3-3v-5c0-1.65-1.35-3-3-3zm-2 10H6V7h12v12zm-9-6c-.83 0-1.5-.67-1.5-1.5S8.17 10 9 10s1.5.67 1.5 1.5S9.83 13 9 13zm6 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5z"/>
+                      </svg>
+                    ) : (
+                      /* Icono view_in_ar por defecto */
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M18.25 7.6l-5.5-3.18c-.46-.27-1.04-.27-1.5 0L5.75 7.6c-.46.27-.75.76-.75 1.3v6.35c0 .54.29 1.03.75 1.3l5.5 3.18c.46.27 1.04.27 1.5 0l5.5-3.18c.46-.27.75-.76.75-1.3V8.9c0-.54-.29-1.03-.75-1.3zM7 14.96v-4.62l4 2.32v4.61l-4-2.31zm5-4.03L8 8.61l4-2.31 4 2.31-4 2.32zm1 6.34v-4.61l4-2.32v4.62l-4 2.31z"/>
+                      </svg>
+                    )
                   )}
                 </div>
                 <div className="element-info">
@@ -2184,6 +2197,24 @@ export default function ProjectViewer3DPure({ modelUrl, projectId, onClose }) {
                 </button>
               </div>
               <div className="details-content">
+                {/* Mostrar la imagen si existe */}
+                {selectedObject.userData.image && (
+                  <div className="object-image-container">
+                    <img 
+                      src={selectedObject.userData.image} 
+                      alt={selectedObject.userData.name} 
+                      className="object-detail-image"
+                      style={{
+                        width: '100%',
+                        height: 'auto',
+                        borderRadius: '8px',
+                        marginBottom: '15px',
+                        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
+                      }}
+                    />
+                  </div>
+                )}
+                
                 {selectedObject.userData.type && (
                   <div className="object-type">{selectedObject.userData.type}</div>
                 )}

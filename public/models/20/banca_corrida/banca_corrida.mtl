@@ -1,0 +1,20 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl Cushion_seat
+Ka 0.000000 0.000000 0.000000
+Kd 0.498039 0.498039 0.498039
+Ks 0.330000 0.330000 0.330000
+
+newmtl Wood3
+Ka 0.000000 0.000000 0.000000
+Kd 0.686275 0.600000 0.501961
+Ks 0.330000 0.330000 0.330000
+
+newmtl M_0008_LavenderBlush
+Ka 0.000000 0.000000 0.000000
+Kd 0.678431 0.611765 0.509804
+Ks 0.330000 0.330000 0.330000
+map_Kd banca corrida/M_0008_LavenderBlush.jpg
+

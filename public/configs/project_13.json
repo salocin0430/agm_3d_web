@@ -102,6 +102,7 @@
       "mtlPath": "/models/13/mesa_nina/mesa_nina.mtl",
       "interactive": true,
       "hidden": false,
+      "image": "/models/13/mesa_nina/mesa.png",
       "maps": {
         "normal": "/textures/materials/plastic/Poliigon_PlasticMoldDryBlast_7495_Normal.png",
         "roughness": "/textures/materials/plastic/Poliigon_PlasticMoldDryBlast_7495_Roughness.jpg",
@@ -133,6 +134,7 @@
         "mtlPath": "/models/13/silla_blanca/silla_blanca.mtl",
         "interactive": true,
         "hidden": false,
+        "image": "/models/13/silla_blanca/silla.png",
         "maps": {
           "normal": "/textures/materials/plastic/Poliigon_PlasticMoldDryBlast_7495_Normal.png",
           "roughness": "/textures/materials/plastic/Poliigon_PlasticMoldDryBlast_7495_Roughness.jpg",
@@ -164,6 +166,7 @@
         "mtlPath": "/models/13/silla_blanca/silla_blanca.mtl",
         "interactive": true,
         "hidden": false,
+        "image": "/models/13/silla_blanca/silla.png",
         "maps": {
           "normal": "/textures/materials/plastic/Poliigon_PlasticMoldDryBlast_7495_Normal.png",
           "roughness": "/textures/materials/plastic/Poliigon_PlasticMoldDryBlast_7495_Roughness.jpg",
@@ -195,6 +198,7 @@
         "mtlPath": "/models/13/caballo_mesedor/caballo_mesedor.mtl",
         "interactive": true,
         "hidden": false,
+        "image": "/models/13/caballo_mesedor/caballo.png",
         "maps": {
           "normal": "",
           "roughness": "",
@@ -226,6 +230,7 @@
         "mtlPath": "/models/13/peluche_conejo/peluche_conejo.mtl",
         "interactive": true,
         "hidden": false,
+        "image": "/models/13/peluche_conejo/conejo.png",
         "maps": {
           "normal": "",
           "roughness": "",
@@ -257,6 +262,7 @@
         "mtlPath": "/models/13/peluche_oso_aslan/peluche_oso_aslan.mtl",
         "interactive": true,
         "hidden": false,
+        "image": "/models/13/peluche_oso_aslan/aslan.png",
         "maps": {
           "normal": "",
           "roughness": "",
@@ -288,6 +294,7 @@
         "mtlPath": "/models/13/peluche_oso_dante/peluche_oso_dante.mtl",
         "interactive": true,
         "hidden": false,
+        "image": "/models/13/peluche_oso_dante/dante.png",
         "maps": {
           "normal": "",
           "roughness": "",
