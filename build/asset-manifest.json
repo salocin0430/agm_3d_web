@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.2ee07f77.css",
-    "main.js": "/static/js/main.bba18037.js",
+    "main.css": "/static/css/main.73c6b38d.css",
+    "main.js": "/static/js/main.8d1983d0.js",
     "static/media/video_background.mp4": "/static/media/video_background.e6a1e7620eff5c6ee180.mp4",
     "static/media/woman.png": "/static/media/woman.85d5b6e726b942f6d6ac.png",
     "static/media/Montserrat-Italic-VariableFont_wght.ttf": "/static/media/Montserrat-Italic-VariableFont_wght.ef11b720b9a6cfb9a317.ttf",
@@ -13,11 +13,11 @@
     "static/media/loader14.png": "/static/media/loader14.e6b264e6aad187ebb38e.png",
     "static/media/loader13.png": "/static/media/loader13.b04001076c32687e5c8c.png",
     "index.html": "/index.html",
-    "main.2ee07f77.css.map": "/static/css/main.2ee07f77.css.map",
-    "main.bba18037.js.map": "/static/js/main.bba18037.js.map"
+    "main.73c6b38d.css.map": "/static/css/main.73c6b38d.css.map",
+    "main.8d1983d0.js.map": "/static/js/main.8d1983d0.js.map"
   },
   "entrypoints": [
-    "static/css/main.2ee07f77.css",
-    "static/js/main.bba18037.js"
+    "static/css/main.73c6b38d.css",
+    "static/js/main.8d1983d0.js"
   ]
 }

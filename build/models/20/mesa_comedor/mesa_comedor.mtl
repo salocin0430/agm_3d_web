@@ -1,0 +1,16 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl Color_C03
+Ka 0.000000 0.000000 0.000000
+Kd 0.690196 0.690196 0.690196
+Ks 0.330000 0.330000 0.330000
+map_Kd mesa de comedor/Color_C03.jpg
+
+newmtl Color_D01
+Ka 0.000000 0.000000 0.000000
+Kd 0.678431 0.611765 0.509804
+Ks 0.330000 0.330000 0.330000
+map_Kd mesa de comedor/Color_D01.jpg
+

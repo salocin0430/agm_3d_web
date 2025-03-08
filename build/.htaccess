@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteBase /
+
+# Redirección de www a sin www
+RewriteCond %{HTTP_HOST} ^www\.store\.laoarchitects\.com [NC]
+RewriteRule ^(.*)$ http://store.laoarchitects.com/$1 [L,R=301]
+
+# Reglas existentes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]

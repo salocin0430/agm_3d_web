@@ -1,0 +1,373 @@
+{
+  "id": "20",
+  "name": "Guest House",
+  "defaultTime": 12,
+  "cameraPosition": [0, 2, 5],
+  "cameraTarget": [0, 1, 0],
+  "floorMaterial": "marble",
+  "baseModel": {
+    "id": "guestHouse",
+    "name": "Guest House",
+    "type": "Estructura",
+    "position": [-5.77,  -2.80, 23.85],
+    "rotation": [0, 0, 0],
+    "scale": [1, 1, 1],
+    "typeModel": "obj",
+    "path": "/models/20/base_guest_house/base_guest_house.obj",
+    "mtlPath": "/models/20/base_guest_house/base_guest_house.mtl",
+    "interactive": false,
+    "hidden": false,
+    "maps": {
+      "normal": "",
+      "roughness": "",
+      "metalness": "",
+      "ao": "",
+      "emissive": ""
+    },
+    "materialProperties": {
+      "roughness": 0.5,
+      "metalness": 0.0,
+      "emissiveIntensity": 0.0,
+      "aoMapIntensity": 1.0,
+      "normalScale": 1.0,
+      "reflective": false
+    }
+  },
+  "objects": [
+    {
+      "id": "bancacorrida",
+      "name": "Banca Corrida",
+      "type": "Mobiliario",
+      "description": "Banca de corrida con un diseño moderno y funcional que se adapta a cualquier espacio.",
+      "price": 129.99,
+      "currency": "€",
+      "position": [-1.62,  0.20, 6.99],
+      "rotation": [0, 0, 0],
+      "scale": [1, 1, 1],
+      "typeModel": "obj",
+      "path": "/models/20/banca_corrida/banca_corrida.obj",
+      "mtlPath": "/models/20/banca_corrida/banca_corrida.mtl",
+      "interactive": true,
+      "hidden": false,
+      "image": "/models/20/banca_corrida/banca.png",
+      "maps": {
+        "normal": "",
+        "roughness": "",
+        "metalness": "",
+        "ao": "",
+        "emissive": ""
+      },
+      "materialProperties": {
+        "roughness": 1,
+        "metalness": 1,
+        "emissiveIntensity": 0.0,
+        "aoMapIntensity": 1,
+        "normalScale": 1,
+        "reflective": false
+      }
+    },
+    {
+        "id": "bancosofa",
+        "name": "Banco Sofá",
+        "type": "Mobiliario",
+        "description": "Banco sofá con un diseño moderno y ergonómico ideal para el estudio.",
+        "price": 89.99,
+        "currency": "€",
+        "position": [-3.43,  0.20, -2.11],
+        "rotation": [0, 0, 0],
+        "scale": [1, 1, 1],
+        "typeModel": "obj",
+        "path": "/models/20/banco_sofa/banco_sofa.obj",
+        "mtlPath": "/models/20/banco_sofa/banco_sofa.mtl",
+        "interactive": true,
+        "hidden": false,
+        "image": "/models/20/banco_sofa/sofacaido.png",
+        "maps": {
+          "normal": "",
+          "roughness": "",
+          "metalness": "",
+          "ao": "",
+          "emissive": ""
+        },
+        "materialProperties": {
+          "roughness": 1,
+          "metalness": 1,
+          "emissiveIntensity": 0.0,
+          "aoMapIntensity": 1,
+          "normalScale": 1,
+          "reflective": false
+        }
+      },
+      {
+        "id": "mesacomedor",
+        "name": "Mesa Comedor",
+        "type": "Mobiliario",
+        "description": "Mesa comedor con un diseño moderno y ergonómico ideal para el estudio.",
+        "price": 89.99,
+        "currency": "€",
+        "position": [-0.68, 0.20, 6.40],
+        "rotation": [0, 0, 0],
+        "scale": [1, 1, 1],
+        "typeModel": "obj",
+        "path": "/models/20/mesa_comedor/mesa_comedor.obj",
+        "mtlPath": "/models/20/mesa_comedor/mesa_comedor.mtl",
+        "interactive": true,
+        "hidden": false,
+        "image": "/models/20/mesa_comedor/mesa.png",
+        "maps": {
+          "normal": "",
+          "roughness": "",
+          "metalness": "",
+          "ao": "",
+          "emissive": ""
+        },
+        "materialProperties": {
+          "roughness": 1,
+          "metalness": 1,
+          "emissiveIntensity": 0.0,
+          "aoMapIntensity": 1,
+          "normalScale": 1,
+          "reflective": false
+        }
+      },
+      {
+        "id": "sillacomedorblanca",
+        "name": "Silla Comedor Blanca",
+        "type": "Mobiliario",
+        "description": "Silla comedor blanca con un diseño moderno y ergonómico ideal para el estudio y habitacion infantil",
+        "price": 102.99,
+        "currency": "€",
+        "position": [0.27,  0.20, 5.75],
+        "rotation": [0, 20, 0],
+        "scale": [1, 1, 1],
+        "typeModel": "obj",
+        "path": "/models/20/silla_comedor_blanca/silla_comedor_blanca.obj",
+        "mtlPath": "/models/20/silla_comedor_blanca/silla_comedor_blanca.mtl",
+        "interactive": true,
+        "hidden": false,
+        "image": "/models/20/silla_comedor_blanca/silla.png",
+        "maps": {
+          "normal": "",
+          "roughness": "",
+          "metalness": "",
+          "ao": "",
+          "emissive": ""
+        },
+        "materialProperties": {
+          "roughness": 1,
+          "metalness": 1,
+          "emissiveIntensity": 0.0,
+          "aoMapIntensity": 1,
+          "normalScale": 1,
+          "reflective": false
+        }
+      },
+      {
+        "id": "sillacomedorblanca2",
+        "name": "Silla Comedor Blanca",
+        "type": "Mobiliario",
+        "description": "Silla comedor blanca con un diseño moderno y ergonómico ideal para el estudio y habitacion infantil",
+        "price": 102.99,
+        "currency": "€",
+        "position": [-0.55,  0.20, 5.45],
+        "rotation": [0, 150, 0],
+        "scale": [1, 1, 1],
+        "typeModel": "obj",
+        "path": "/models/20/silla_comedor_blanca/silla_comedor_blanca.obj",
+        "mtlPath": "/models/20/silla_comedor_blanca/silla_comedor_blanca.mtl",
+        "interactive": true,
+        "hidden": false,
+        "image": "/models/20/silla_comedor_blanca/silla.png",
+        "maps": {
+          "normal": "",
+          "roughness": "",
+          "metalness": "",
+          "ao": "",
+          "emissive": ""
+        },
+        "materialProperties": {
+          "roughness": 1,
+          "metalness": 1,
+          "emissiveIntensity": 0.0,
+          "aoMapIntensity": 1,
+          "normalScale": 1,
+          "reflective": false
+        }
+      },
+      {
+        "id": "sofaguesthouse",
+        "name": "Sofa Guest House",
+        "type": "Mobiliario",
+        "description": "Sofa de guest house con un diseño moderno ideal para el estudio y habitacion infantil",
+        "price": 102.99,
+        "currency": "€",
+        "position": [-1.83,  0.20, 4.60],
+        "rotation": [0, 0, 0],
+        "scale": [1, 1, 1],
+        "typeModel": "obj",
+        "path": "/models/20/sofa_guest_house/sofa_guest_house.obj",
+        "mtlPath": "/models/20/sofa_guest_house/sofa_guest_house.mtl",
+        "interactive": true,
+        "hidden": false,
+        "image": "/models/20/sofa_guest_house/sofa.png",
+        "maps": {
+          "normal": "",
+          "roughness": "",
+          "metalness": "",
+          "ao": "",
+          "emissive": ""
+        },
+        "materialProperties": {
+          "roughness": 1,
+          "metalness": 1,
+          "emissiveIntensity": 0.0,
+          "aoMapIntensity": 1,
+          "normalScale": 1,
+          "reflective": false
+        }
+      },
+      {
+        "id": "pelucheosoaslan",
+        "name": "Peluche Oso Aslan",
+        "type": "Juguete",
+        "description": "Peluche de oso aslan con un diseño moderno ideal para tus hijos",
+        "price": 102.99,
+        "currency": "€",
+        "position": [ -1.88,  0.2, -1.04],
+        "rotation": [0, 0, 0],
+        "scale": [1, 1, 1],
+        "typeModel": "obj",
+        "path": "/models/13/peluche_oso_aslan/peluche_oso_aslan.obj",
+        "mtlPath": "/models/13/peluche_oso_aslan/peluche_oso_aslan.mtl",
+        "interactive": true,
+        "hidden": false,
+        "image": "/models/13/peluche_oso_aslan/aslan.png",
+        "maps": {
+          "normal": "",
+          "roughness": "",
+          "metalness": "",
+          "ao": "",
+          "emissive": ""
+        },
+        "materialProperties": {
+          "roughness": 1,
+          "metalness": 1,
+          "emissiveIntensity": 0.0,
+          "aoMapIntensity": 1,
+          "normalScale": 1,
+          "reflective": false
+        }
+      },
+      {
+        "id": "pelucheosodante",
+        "name": "Peluche Oso Dante",
+        "type": "Juguete",
+        "description": "Peluche de oso dante con un diseño moderno ideal para tus hijos",
+        "price": 102.99,
+        "currency": "€",
+        "position": [-1.55,  0.20, -5.56],
+        "rotation": [0, 0, 0],
+        "scale": [1, 1, 1],
+        "typeModel": "obj",
+        "path": "/models/13/peluche_oso_dante/peluche_oso_dante.obj",
+        "mtlPath": "/models/13/peluche_oso_dante/peluche_oso_dante.mtl",
+        "interactive": true,
+        "hidden": false,
+        "image": "/models/13/peluche_oso_dante/dante.png",
+        "maps": {
+          "normal": "",
+          "roughness": "",
+          "metalness": "",
+          "ao": "",
+          "emissive": ""
+        },
+        "materialProperties": {
+          "roughness": 1,
+          "metalness": 1,
+          "emissiveIntensity": 0.0,
+          "aoMapIntensity": 1,
+          "normalScale": 1,
+          "reflective": false
+        }
+      },
+      {
+        "id": "sillaAzul",
+        "name": "Silla Azul",
+        "type": "Mobiliario",
+        "position": [ -0.30,  0.20, -4.03],
+        "rotation": [0, 30, 0],
+        "scale": [1, 1, 1],
+        "typeModel": "obj",
+        "path": "/models/20/silla_azul/silla_azul.obj",
+        "mtlPath": "/models/20/silla_azul/silla_azul.mtl",
+        "interactive": true,
+        "hidden": false,
+        "image": "/models/20/silla_azul/sillaazul.png",
+        "price": 102.99,
+        "currency": "€",
+        "maps": {               
+          "normal": "",
+          "roughness": "",
+          "metalness": "",
+          "ao": "",
+          "emissive": ""
+        },
+        "materialProperties": {
+          "roughness": 1,
+          "metalness": 1,
+          "emissiveIntensity": 0.0,
+          "aoMapIntensity": 1,
+          "normalScale": 0,
+          "reflective": false
+        }
+      },
+      {
+        "id": "sillaAzul2",
+        "name": "Silla Azul",
+        "type": "Mobiliario",
+        "position": [-1.00,  0.20, -2.22],
+        "rotation": [0, -30, 0],
+        "scale": [1, 1, 1],
+        "typeModel": "obj",
+        "path": "/models/20/silla_azul/silla_azul.obj",
+        "mtlPath": "/models/20/silla_azul/silla_azul.mtl",
+        "interactive": true,
+        "hidden": false,
+        "image": "/models/20/silla_azul/sillaazul.png",
+        "maps": {               
+          "normal": "",
+          "roughness": "",
+          "metalness": "",
+          "ao": "",
+          "emissive": ""
+        },
+        "materialProperties": {
+          "roughness": 1,
+          "metalness": 1,
+          "emissiveIntensity": 0.0,
+          "aoMapIntensity": 1,
+          "normalScale": 0,
+          "reflective": false
+        }
+      }
+  ],
+  "lighting": {
+    "ambient": {
+      "color": "0xffffff",
+      "intensity": 0.4,
+      "name": "ambientLight"
+    },
+    "directional": {
+      "color": "0xffffff",
+      "intensity": 1.0,
+      "position": [10, 10, 10],
+      "castShadow": true,
+      "name": "mainLight"
+    }
+  },
+  "environment": {
+    "skyColor": "0x87ceeb",
+    "groundColor": "0x8b4513",
+    "fogEnabled": false
+  }
+} 
